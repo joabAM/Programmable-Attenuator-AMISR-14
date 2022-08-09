@@ -179,7 +179,7 @@ class Attenuator:
             while time.clock() < target_time:
                 pass
             '''
-        print("Ramp from {} to {} completed.".format(atts[0], atts[-1]))
+        print("Ramp from {} dB to {} dB completed.".format(atts[0], atts[-1]))
 
 
 

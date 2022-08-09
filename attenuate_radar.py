@@ -10,13 +10,13 @@ ip = '192.168.10.27'
 ##ip = '169.254.10.10'
 mask = '255.255.255.0'
 gateway = '10.10.40.1'
-startUp_attenuation = 0
+startUp_attenuation = 30
 
 ramp_time = 60 # seconds
 steady_time = 1  # minutes
 startUpMode = 'F'  # L=Last Value, F=Fixed Value, N=Default
 minAtt = 0
-maxAtt = 15
+maxAtt = 25
 
 ################################################################################
 if minAtt%0.25 != 0.0:
@@ -57,5 +57,5 @@ att.set_lastAtt()
 print("---------------------------------------")
 print("Current Attenuation: {} dB".format(att.get_att()))
 print()
-print("Radar attenuation Done :)")
+print("Radar attenuator completed :)")
 sleep(30)
