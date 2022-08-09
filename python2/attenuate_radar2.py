@@ -21,7 +21,7 @@ ramp_time = 60 # seconds
 steady_time = 1  # minutes
 startUpMode = 'F'  # L=Last Value, F=Fixed Value, N=Default
 minAtt = 0
-maxAtt = 25
+maxAtt = 30
 
 ################################################################################
 if minAtt%0.25 != 0.0:
@@ -42,9 +42,9 @@ steps = (maxAtt-minAtt)/0.25
 steptime = int((ramp_time*1000)/steps)
 att_time = (steady_time*60)
 print "---------------------------------------"
-print "Ramp time: %f s"%(ramp_time)
-print "Att time: %f s"%(att_time)
-print "Step Time: %f ms"%(steptime)
+print "Ramp time: %2.2f s"%(ramp_time)
+print "Steady time: %2.2f s"%(att_time)
+print "Step Time: %2.2f ms"%(steptime)
 print "Steps: ", steps
 print "---------------------------------------"
 print "starting attenuetion"
@@ -60,7 +60,7 @@ att.att_ramp( start=maxAtt, stop=minAtt, step=0.25, time_ms=steptime )
 #att.set_att(minAtt)
 att.set_lastAtt()
 print "---------------------------------------"
-print "Current Attenuation: %f dB"%(att.get_att())
+print "Current Attenuation: %2.2f dB"%(att.get_att())
 print " "
 print "Radar attenuator completed :)"
 sleep(30)

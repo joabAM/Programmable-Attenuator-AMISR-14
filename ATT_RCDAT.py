@@ -42,7 +42,7 @@ class Attenuator:
 
     def show_info(self):
 
-        list = [['Model',self.get_model()], ['Serial', self.get_serial()],['Firmware', self.get_firmware()], ['USB ADDR', self.get_usbAddr()],
+        list = [['Parameter', 'value'],['Model',self.get_model()], ['Serial', self.get_serial()],['Firmware', self.get_firmware()], ['USB ADDR', self.get_usbAddr()],
                 ['Ip ', self.get_ip()], ['Mask ', self.get_mask()], ['Gateway', self.get_gate()],
                 ['Current Att', self.get_att()], ['StartUp Att', self.get_startUp_att()]]
 

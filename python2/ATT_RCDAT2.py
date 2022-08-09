@@ -8,8 +8,6 @@ import urllib2 as req
 import numpy as np
 import time
 
-import pip
-from tabulate import tabulate
 
 class Attenuator:
 
@@ -43,11 +41,16 @@ class Attenuator:
 
     def show_info(self):
 
-        list = [['Model',self.get_model()], ['Serial', self.get_serial()],['Firmware', self.get_firmware()], ['USB ADDR', self.get_usbAddr()],
+        list = [['Parameter', 'value'],['Model',self.get_model()], ['Serial', self.get_serial()],
+                ['Firmware', self.get_firmware()], ['USB ADDR', self.get_usbAddr()],
                 ['Ip ', self.get_ip()], ['Mask ', self.get_mask()], ['Gateway', self.get_gate()],
-                ['Current Att', self.get_att()], ['StartUp Att', self.get_startUp_att()]]
-
-        print tabulate(list, headers=['Parameter', 'Value'])
+                ['Current Att', str(self.get_att())], ['StartUp Att', str(self.get_startUp_att())]]
+        i = True
+        for element in list:
+            print "%-15s \t\t %-20s" % (element[0],element[1])
+            if i:
+                print "%-s \t\t %20s" % ("------------", "------------")
+                i = False
 
     ##--------------------------------------------------------------------------
     def get(self, command):
@@ -57,7 +60,7 @@ class Attenuator:
         else:
             pwd = ''
         s = "http://%s:%s/PWD=%s%s" %(self.ip, self.port, pwd, command)
-        
+
         s += "?"
         #print s
         url = req.urlopen(s)
@@ -185,7 +188,7 @@ class Attenuator:
             while time.clock() < target_time:
                 pass
             '''
-        print "Ramp from %f dB to %f dB completed."%(atts[0], atts[-1])
+        print "Ramp from %2.2f dB to %2.2f dB completed."%(atts[0], atts[-1])
 
 
 
@@ -385,7 +388,7 @@ class Attenuator:
         return float(r)
     ##--------------------------------------------------------------------------
     def set_startUp_mode(self, value):# L=Last Value, F=Fixed Value, N=Default
-        r = int(self.set(':STARTUPATT:INDICATOR:%f'%(value)))
+        r = int(self.set(':STARTUPATT:INDICATOR:%s'%(value)))
         return r # 0 failed, 1 successful
     def get_startUp_mode(self):
         r = self.get(':STARTUPATT:INDICATOR')

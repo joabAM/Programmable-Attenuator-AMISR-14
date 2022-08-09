@@ -16,7 +16,7 @@ ramp_time = 60 # seconds
 steady_time = 1  # minutes
 startUpMode = 'F'  # L=Last Value, F=Fixed Value, N=Default
 minAtt = 0
-maxAtt = 25
+maxAtt = 30
 
 ################################################################################
 if minAtt%0.25 != 0.0:
@@ -38,7 +38,7 @@ steptime = int((ramp_time*1000)/steps)
 att_time = (steady_time*60)
 print("---------------------------------------")
 print("Ramp time: {} s".format(ramp_time))
-print("Att time: {} s".format(att_time))
+print("Steady time: {} s".format(att_time))
 print("Step Time: {} ms".format(steptime))
 print("Steps: ", steps)
 print("---------------------------------------")
