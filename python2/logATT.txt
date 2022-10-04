@@ -1,0 +1,33 @@
+04/10/2022 11:59/01
+Same previous IP
+---------------------------------------
+Parameter       		 value               
+------------ 		         ------------
+Model           		 MN=RCDAT-8000-30    
+Serial          		 SN=12111090069      
+Firmware        		 F4-ID31-2-SNUSBID   
+USB ADDR        		 255                 
+Ip              		 192.168.10.27       
+Mask            		 255.255.255.0       
+Gateway         		 192.168.10.1        
+Current Att     		 0.0                 
+StartUp Att     		 30.0                
+---------------------------------------
+Ramp time: 60.00 s
+Steady time: 60.00 s
+Step Time: 500.00 ms
+Steps:  120.0
+---------------------------------------
+starting attenuation
+---------------------------------------
+Ramp from 0.00 dB to 30.00 dB completed.
+---------------------------------------
+starting steady time 60 seconds
+steady time finished
+---------------------------------------
+Ramp from 30.00 dB to 0.00 dB completed.
+---------------------------------------
+Current Attenuation: 0.00 dB
+ 
+Radar attenuator completed :)
+---- 193.156000137 seconds--- 

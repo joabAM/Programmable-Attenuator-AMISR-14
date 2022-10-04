@@ -176,12 +176,12 @@ class Attenuator:
             inc *= -1
         atts = np.arange(start,(stop+inc),inc)
         #print atts
+        #print time_ms
         for att in atts:
             self.set_att(att)
             if att != self.get_att():
                 print "Error set attenuation step %f"%(att)
-
-            time.sleep(time_ms/1000)
+            time.sleep(time_ms/1000.0)
             '''
             target_time = time.clock() + (time_ms/1000)
             #print target_time-time.clock()

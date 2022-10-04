@@ -1,2 +1,1 @@
-C:\Python25\python "C:\Documents and Settings\joab\Desktop\scripts\attenuate_radar2.py" >> "C:\Documents and Settings\joab\Desktop\scripts\logATT.txt"
-exit
+cmd /c C:\Python25\python "C:\Documents and Settings\radar\Desktop\scripts\attenuate_radar2.py" > "C:\Documents and Settings\radar\Desktop\scripts\logATT.txt" 2>&1

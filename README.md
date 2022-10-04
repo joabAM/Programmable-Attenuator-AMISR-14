@@ -5,15 +5,14 @@ Running experiments with an external programmable attenuator in AMISR-14 using R
 * python 3:
 	Just use crontab to launch attenuator.sh, the parameters have the following pattern:
 	xterm -e /usr/bin/python3.x /home/{user}/pathToscript/attenuate_radar.py
-
+	or Exec=uxterm 
 
 
 * python 2: (tested 2.5.4 and 2.7.1)
 	Task scheduler is needed, the python script is launched from a bat file. All the files are in the python2 folder.
 	The bat file must include the route of python.exe, the path of attenuate_radar2.py and the location of the log file.
 	example bat file:
-	C:\path2Python\python "C:\path2script\attenuate_radar2.py" >> "C:\path2Log\logATT.txt"
-	exit
+	cmd /c C:\Python25\python "C:\Documents and Settings\radar\Desktop\scripts\attenuate_radar2.py" > "C:\Documents and Settings\radar\Desktop\scripts\logATT.txt" 2>&1
 
 The configuration of the Task scheduler on Windows:
  - Go to: Start >> All Programs >> Accessories >> System Tools >> Scheduled Tasks
